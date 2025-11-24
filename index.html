@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhilasha Thakur | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+</head>
+<body>
+
+    <!-- Floating Floral Background -->
+    <div class="floating floral floral1">🌸</div>
+    <div class="floating floral floral2">🌿</div>
+    <div class="floating floral floral3">🌸</div>
+    <div class="floating floral floral4">🌿</div>
+
+    <!-- Header / Navigation -->
+    <header data-aos="fade-in">
+        <nav>
+            <h2 class="logo shine">Abhilasha</h2>
+            <ul>
+                <li><a class="nav-link" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="#skills">Skills</a></li>
+                <li><a class="nav-link" href="#projects">Projects</a></li>
+                <li><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" data-aos="fade-in">
+        <h1>Hi, I'm <span class="shine-text">Abhilasha Thakur</span> 🤍</h1>
+        <p><span id="typing"></span></p>
+        <a href="#contact" class="btn" data-aos="fade-in" data-aos-delay="200">Contact Me</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about" data-aos="fade-in">
+        <h2>About Me</h2>
+        <p>
+            A curious soul, a constant learner, and a creator in progress.  
+            I love exploring ideas, interacting with people, communicating confidently,
+            and turning possibilities into results.  
+            I’m a <b>CDAC aspirant</b> currently diving deep into the world of development and programming.
+            Tech inspires me because it gives the power to create something meaningful from nothing.
+            I’m still learning, still discovering, still improving — but unstoppable in effort and passion.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills" data-aos="fade-in">
+        <h2>Skills & Tools</h2>
+        <p class="skills-intro">I love experimenting with technology and expanding my toolbox every day. Not perfect, but a fast learner and unstoppable in progress 🤍</p>
+
+        <div class="skill-categories">
+            <div class="skill-box" data-aos="fade-in">✨ Languages<br>C, C++, Java, JavaScript</div>
+            <div class="skill-box" data-aos="fade-in">🎨 Frontend<br>HTML, CSS, Bootstrap, JavaScript</div>
+            <div class="skill-box" data-aos="fade-in">🧠 Backend<br>Learning Node.js, .Net, SpringBoot</div>
+            <div class="skill-box" data-aos="fade-in">🗃 Databases<br>MongoDB, MySQL</div>
+            <div class="skill-box" data-aos="fade-in">⚙ Tools<br>Git, GitHub, VS Code, Postman</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects" data-aos="fade-in">
+        <h2>Projects</h2>
+
+        <div class="project floating-card" data-aos="fade-in" data-aos-delay="150">
+            <h3>StreetBite</h3>
+            <p>
+                StreetBite is a web platform that helps users discover nearby street food vendors using real-time location.
+                Vendors can register their stalls, upload menus and photos, update availability, and manage their profiles,
+                ratings, reviews, and navigate through an interactive map.
+                Built with Next.js, Spring Boot, Firebase Firestore, and Maps APIs, StreetBite makes it easier for small 
+                food stalls to build a digital presence and helps users explore authentic, affordable street food around them.
+            </p>
+            <span>Tech Used: Next,js, Spring Boot, Firebase, MySQL, Map APIs </span>
+        </div>
+
+        <div class="project floating-card" data-aos="fade-in" data-aos-delay="200">
+            <h3>FlowerDoor Café</h3>
+            <p>A clean & modern café website UI/UX concept designed for brand identity and a seamless browsing experience.</p>
+            <span>Tech Used: HTML, CSS, JavaScript</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact" data-aos="fade-in">
+        <h2>Contact</h2>
+        <p>📧 Email: <a href="mailto:abhilashasthakur2@gmail.com">abhilashasthakur2@gmail.com</a></p>
+        <p>🐙 GitHub: <a href="https://github.com/Abhilasha-0710">Abhilasha-0710</a></p>
+    </section>
+
+    <!-- Footer Quote Section -->
+    <footer class="footer" data-aos="fade-in">
+        <div class="quote-line">✿ ✿ ✿</div>
+        <p class="quote">“Bloom where you are planted — grow beautifully in your own time.”</p>
+        <p class="credit">© 2025 — Built with 🤍 by Abhilasha Thakur</p>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({ duration: 900, easing: "ease", once: true });</script>
+
+    <!-- Typing Effect Script -->
+    <script>
+        const text = ["Curious. Creative. Fearless Learner.", "Growing Every Day."];
+        let index = 0, charIndex = 0;
+        const typingElement = document.getElementById("typing");
+
+        function type() {
+            if (charIndex < text[index].length) {
+                typingElement.innerHTML += text[index].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 90);
+            } else {
+                setTimeout(() => {
+                    charIndex = 0;
+                    typingElement.innerHTML = "";
+                    index = (index + 1) % text.length;
+                    type();
+                }, 1500);
+            }
+        }
+        type();
+    </script>
+
+</body>
+</html>
