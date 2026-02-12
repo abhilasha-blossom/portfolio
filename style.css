@@ -5,6 +5,7 @@
 }
 
 :root {
+    /* Light Mode (Default) */
     --bg-color: #FAF7FF;
     --text-color: #4A3E52;
     --text-muted: #7A6E82;
@@ -15,6 +16,20 @@
     --card-bg: #FFFFFF;
     --shadow-color: rgba(172, 142, 201, 0.25);
     --shadow-hover: rgba(172, 142, 201, 0.35);
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-color: #1a1625;
+    --text-color: #e6e1f0;
+    --text-muted: #b0a8c0;
+    --accent-color: #c0a0e0;
+    --accent-hover: #a080c0;
+    --header-bg: rgba(26, 22, 37, 0.9);
+    --border-color: #403850;
+    --card-bg: #252033;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-hover: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -38,19 +53,59 @@ html {
     pointer-events: none;
     z-index: 1;
 }
-.floral1 { top: 20%; left: 6%; }
-.floral2 { top: 70%; left: 12%; }
-.floral3 { top: 35%; right: 8%; }
-.floral4 { bottom: 10%; right: 18%; }
-.floral5 { top: 10%; left: 28%; }
-.floral6 { top: 60%; left: 32%; }
-.floral7 { top: 45%; right: 28%; }
-.floral8 { bottom: 20%; right: 32%; }
+
+.floral1 {
+    top: 20%;
+    left: 6%;
+}
+
+.floral2 {
+    top: 70%;
+    left: 12%;
+}
+
+.floral3 {
+    top: 35%;
+    right: 8%;
+}
+
+.floral4 {
+    bottom: 10%;
+    right: 18%;
+}
+
+.floral5 {
+    top: 10%;
+    left: 28%;
+}
+
+.floral6 {
+    top: 60%;
+    left: 32%;
+}
+
+.floral7 {
+    top: 45%;
+    right: 28%;
+}
+
+.floral8 {
+    bottom: 20%;
+    right: 32%;
+}
 
 @keyframes float {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-16px) rotate(8deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-16px) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
 }
 
 /* Navbar */
@@ -65,21 +120,25 @@ header {
     left: 0;
     z-index: 100;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     font-family: "Playfair Display", serif;
     font-size: 26px;
     letter-spacing: 2px;
 }
+
 nav ul {
     display: flex;
     list-style: none;
     gap: 26px;
 }
+
 nav ul li a {
     text-decoration: none;
     color: var(--text-color);
@@ -87,8 +146,23 @@ nav ul li a {
     font-size: 0.95rem;
     transition: 0.3s ease;
 }
+
 nav ul li a:hover {
     color: var(--accent-color);
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    padding: 0 5px;
+}
+
+.theme-btn:hover {
+    transform: rotate(20deg) scale(1.1);
 }
 
 /* Hero */
@@ -97,10 +171,12 @@ nav ul li a:hover {
     padding: 140px 60px 80px 60px;
     text-align: center;
 }
+
 .hero h1 {
     font-size: 2.6rem;
     margin-bottom: 10px;
 }
+
 .hero p {
     font-size: 1.05rem;
     color: var(--text-muted);
@@ -113,6 +189,7 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
 }
+
 #typing {
     display: inline-block;
     font-size: 1.1rem;
@@ -120,6 +197,7 @@ nav ul li a:hover {
     min-width: 300px;
     text-align: center;
 }
+
 #typing::after {
     content: "|";
     margin-left: 4px;
@@ -127,9 +205,18 @@ nav ul li a:hover {
     color: var(--accent-color);
     font-weight: 600;
 }
+
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    50%, 100% { opacity: 0; }
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
 }
 
 /* Buttons */
@@ -145,26 +232,36 @@ nav ul li a:hover {
     transition: 0.3s ease;
     box-shadow: 0 6px 18px var(--shadow-hover);
 }
+
 .btn:hover {
     background: var(--accent-hover);
     transform: translateY(-3px);
 }
+
 .btn-download {
     font-size: 0.9rem;
     padding: 10px 24px;
 }
 
 /* Shine text */
-.shine-text, .shine {
+.shine-text,
+.shine {
     background: linear-gradient(90deg, var(--text-color) 20%, var(--bg-color) 50%, var(--text-color) 80%);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     background-size: 200% auto;
     animation: shine 3s linear infinite;
 }
+
 @keyframes shine {
-    from { background-position: 200% center; }
-    to { background-position: -200% center; }
+    from {
+        background-position: 200% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
 }
 
 /* Sections */
@@ -185,12 +282,14 @@ section {
     max-width: 720px;
     margin: 0 auto 24px auto;
 }
+
 .skill-categories {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
+
 .skill-box {
     width: 230px;
     padding: 18px 20px;
@@ -200,6 +299,7 @@ section {
     box-shadow: 0 6px 18px var(--shadow-color);
     transition: 0.3s ease;
 }
+
 .skill-box:hover {
     transform: translateY(-6px);
     border-color: var(--accent-color);
@@ -296,6 +396,7 @@ section {
     flex-direction: column;
     gap: 16px;
 }
+
 .contact-form input,
 .contact-form textarea {
     padding: 14px;
@@ -303,6 +404,7 @@ section {
     border: 1.5px solid var(--border-color);
     transition: 0.3s ease;
 }
+
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: var(--accent-color);
@@ -314,16 +416,54 @@ section {
     text-align: center;
     padding: 40px 20px 30px 20px;
 }
+
 .quote-line {
     font-size: 20px;
     color: var(--accent-color);
 }
+
 .quote {
     font-style: italic;
 }
+
 .credit {
     font-size: 0.85rem;
     color: #9C8AA8;
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 22px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    pointer-events: auto;
+    bottom: 22px;
+    /* Slight slide-up animation */
+}
+
+.scroll-top-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
 }
 
 /* Cute Toast Notification */
@@ -353,13 +493,34 @@ section {
 
 /* Responsive */
 @media (max-width: 900px) {
-    header { padding: 14px 24px; }
-    .hero { padding: 130px 24px 60px 24px; }
-    section { padding: 70px 24px; }
+    header {
+        padding: 14px 24px;
+    }
+
+    .hero {
+        padding: 130px 24px 60px 24px;
+    }
+
+    section {
+        padding: 70px 24px;
+    }
 }
+
 @media (max-width: 600px) {
-    nav ul { gap: 16px; font-size: 0.8rem; }
-    .hero h1 { font-size: 2rem; }
-    .hero p { font-size: 0.95rem; }
-    .skill-box { width: 100%; }
+    nav ul {
+        gap: 16px;
+        font-size: 0.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .skill-box {
+        width: 100%;
+    }
 }

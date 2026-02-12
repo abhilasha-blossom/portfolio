@@ -41,6 +41,8 @@
                 <li><a class="nav-link" href="#skills">Skills</a></li>
                 <li><a class="nav-link" href="#projects">Projects</a></li>
                 <li><a class="nav-link" href="#contact">Contact</a></li>
+                <!-- Dark Mode Toggle -->
+                <li><button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">🌙</button></li>
             </ul>
         </nav>
     </header>
@@ -55,7 +57,7 @@
         </p>
 
         <a href="#contact" class="btn" data-aos="fade-in" data-aos-delay="200">Contact Me</a>
-        <a href="Abhilasha_Cdac_Resume.pdf" class="btn btn-download" data-aos="fade-in" data-aos-delay="300">Download CV</a>
+        <a href="Resume.pdf" class="btn btn-download" data-aos="fade-in" data-aos-delay="300">Download CV</a>
     </section>
 
     <!-- About Section -->
@@ -95,27 +97,30 @@
         <div class="projects-scroll">
 
             <div class="project-card">
-                <img src="https://cdn.dribbble.com/userupload/21785257/file/original-cf08378f607d9ff24b513c6cd673f6ba.png?format=webp&resize=400x300&vertical=center" alt="StreetBite App">
+                <img src="images/streetbite_preview.png" alt="StreetBite App" loading="lazy">
                 <h3>StreetBite</h3>
                 <p>
                     StreetBite is a web platform that helps users discover nearby street food vendors using real-time
                     location.
                     Vendors can register their stalls, upload menus and photos, update availability, and manage their
                     profiles, ratings and reviews, and navigate through an interactive map.
-                    Built with Next.js, Spring Boot, Firebase Firestore, and Map APIs, StreetBite helps small food stalls
+                    Built with Next.js, Spring Boot, Firebase Firestore, and Map APIs, StreetBite helps small food
+                    stalls
                     build a digital presence and helps users explore affordable, authentic street food.
                 </p>
                 <span>Next.js · Spring Boot · Firebase · Map APIs</span>
             </div>
 
             <div class="project-card">
-                <img src="https://i.pinimg.com/736x/f5/93/a3/f593a3ce7fdc105aa656eeb9bca6d97b.jpg" alt="FlowerDoor Café">
-                <h3>FlowerDoor Café</h3>
+                <img src="images/Koikana.png" alt="Koikana App" loading="lazy">
+                <h3>Koikana (KoiKana)</h3>
                 <p>
-                    A clean & modern café website UI/UX concept designed for brand identity and a seamless browsing
-                    experience.
+                    A React-based Japanese learning app blending Zen minimalism with smart repetition.
+                    Features a Zen Garden Progress Tracker, Canvas-based "Sand Garden" writing practice, and dojo-style
+                    quizzes.
+                    Designed to be an experience-driven language dojo, not just a memorization tool.
                 </p>
-                <span>HTML · CSS · JavaScript</span>
+                <span>React (Vite) · Tailwind · Supabase · HTML5 Canvas</span>
             </div>
 
             <!-- You can add more project-card divs here later -->
@@ -149,7 +154,7 @@
         </p>
 
         <p>
-            💼 LinkedIn: 
+            💼 LinkedIn:
             <a href="https://www.linkedin.com/in/abhilasha-thakur-35474b283/" target="_blank">Connect with me</a>
         </p>
 
@@ -161,6 +166,12 @@
         <p class="quote">“Bloom where you are planted — grow beautifully in your own time.”</p>
         <p class="credit">© 2025 — Built with 🤍 by Abhilasha Thakur</p>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to Top">↑</button>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
 
     <!-- AOS Script -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -200,22 +211,22 @@
         });
     </script>
 
-<script>
-    const form = document.querySelector(".contact-form");
-    form.addEventListener("submit", (e) => {
-        // Small delay so toast appears after Formspree sends successfully
-        setTimeout(() => {
-            const toast = document.getElementById("toast");
-            toast.classList.add("show");
-    
-            // Hide after 4 sec
+    <script>
+        const form = document.querySelector(".contact-form");
+        form.addEventListener("submit", (e) => {
+            // Small delay so toast appears after Formspree sends successfully
             setTimeout(() => {
-                toast.classList.remove("show");
-            }, 4000);
-        }, 600);
-    });
+                const toast = document.getElementById("toast");
+                toast.classList.add("show");
+
+                // Hide after 4 sec
+                setTimeout(() => {
+                    toast.classList.remove("show");
+                }, 4000);
+            }, 600);
+        });
     </script>
-    
+
 </body>
 
 </html>
