@@ -203,40 +203,62 @@
 
         <div class="projects-scroll">
 
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up">
                 <img src="images/streetbite_preview.png" alt="StreetBite App" loading="lazy">
                 <h3>StreetBite</h3>
+                <span class="project-subtitle">Street Food Discovery Platform</span>
+                
+                <h4>Tech Stack:</h4>
+                <span>Spring Boot · Next.js · Firebase Firestore · Google Maps API</span>
+                
+                <h4>Description:</h4>
                 <p>
-                    StreetBite is a web platform that helps users discover nearby street food vendors using real-time
-                    location.
-                    Vendors can register their stalls, upload menus and photos, update availability, and manage their
-                    profiles, ratings and reviews, and navigate through an interactive map.
-                    Built with Next.js, Spring Boot, Firebase Firestore, and Map APIs, StreetBite helps small food
-                    stalls
-                    build a digital presence and helps users explore affordable, authentic street food.
+                    StreetBite is a full stack web platform designed to help users discover local street food vendors based on location.
                 </p>
-                <span>Next.js · Spring Boot · Firebase · Map APIs</span>
+                
+                <h4>Features:</h4>
+                <ul class="project-features">
+                    <li>RESTful backend services built with Spring Boot</li>
+                    <li>Vendor management system with CRUD operations</li>
+                    <li>Location-based search functionality</li>
+                    <li>Google Maps API integration</li>
+                    <li>Real-time vendor tracking using Firebase Firestore</li>
+                    <li>Responsive frontend built using Next.js</li>
+                    <li>Structured layered backend architecture</li>
+                </ul>
+
                 <div class="project-links">
+                    <a href="https://github.com/abhilasha-blossom/StreetBite" target="_blank" class="btn-sm outline">💻 View Code</a>
                     <a href="https://streetbitego.vercel.app/" target="_blank" class="btn-sm">🚀 Live Demo</a>
-                    <a href="https://github.com/abhilasha-blossom/StreetBite" target="_blank" class="btn-sm outline">💻
-                        Source Code</a>
                 </div>
             </div>
 
-            <div class="project-card">
-                <img src="images/Koikana.png" alt="Koikana App" loading="lazy">
-                <h3>Koikana (KoiKana)</h3>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/Koikana.png" alt="KoiKana App" loading="lazy">
+                <h3>KoiKana</h3>
+                <span class="project-subtitle">Japanese Learning Web Application</span>
+                
+                <h4>Tech Stack:</h4>
+                <span>React · HTML5 Canvas · LocalStorage · Audio API</span>
+                
+                <h4>Description:</h4>
                 <p>
-                    A React-based Japanese learning app blending Zen minimalism with smart repetition.
-                    Features a Zen Garden Progress Tracker, Canvas-based "Sand Garden" writing practice, and dojo-style
-                    quizzes.
-                    Designed to be an experience-driven language dojo, not just a memorization tool.
+                    KoiKana is an interactive web application designed to help users learn Japanese Hiragana and Katakana in an aesthetic and engaging way.
                 </p>
-                <span>React (Vite) · Tailwind · Supabase · HTML5 Canvas</span>
+                
+                <h4>Features:</h4>
+                <ul class="project-features">
+                    <li>Canvas-based handwriting practice</li>
+                    <li>Real-time stroke input handling</li>
+                    <li>Interactive quiz modules</li>
+                    <li>Score tracking system</li>
+                    <li>Learning progress stored in LocalStorage</li>
+                    <li>Calm aesthetic learning experience inspired by Japanese Zen design</li>
+                </ul>
+
                 <div class="project-links">
+                    <a href="https://github.com/abhilasha-blossom/Koikana" target="_blank" class="btn-sm outline">💻 View Code</a>
                     <a href="https://koi-kana.vercel.app/" target="_blank" class="btn-sm">🚀 Live Demo</a>
-                    <a href="https://github.com/abhilasha-blossom/Koikana" target="_blank" class="btn-sm outline">💻
-                        Source Code</a>
                 </div>
             </div>
 
@@ -334,8 +356,11 @@
     <script>
         const slider = document.querySelector(".projects-scroll");
         slider.addEventListener("wheel", (e) => {
-            e.preventDefault();
-            slider.scrollLeft += e.deltaY;
+            if (e.deltaY !== 0) {
+                // If scrolling vertically, translate to horizontal
+                // But DO NOT preventDefault() so the page can still move
+                slider.scrollLeft += e.deltaY;
+            }
         });
     </script>
 

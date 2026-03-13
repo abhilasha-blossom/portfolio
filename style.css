@@ -505,15 +505,18 @@ section {
 }
 
 .project-card {
-    min-width: 340px;
-    max-width: 340px;
+    flex: 1;
+    min-width: 380px;
+    max-width: 420px;
     background: var(--card-bg);
     border-radius: 20px;
-    padding: 20px;
+    padding: 26px;
     border: 1.5px solid var(--border-color);
     box-shadow: 0 8px 20px var(--shadow-color);
     transition: 0.35s ease;
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -532,7 +535,23 @@ section {
 
 .project-card h3 {
     color: var(--accent-color);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
+    font-size: 1.4rem;
+}
+
+.project-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.project-card h4 {
+    font-size: 0.95rem;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: var(--text-color);
 }
 
 .project-card p {
@@ -547,6 +566,28 @@ section {
     color: #9C8AA8;
     margin-bottom: 15px;
     font-weight: 500;
+}
+
+.project-features {
+    list-style: none;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Pushes links to the bottom */
+}
+
+.project-features li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.project-features li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
 }
 
 /* Project Links */
@@ -584,18 +625,15 @@ section {
     color: white;
 }
 
-/* Fix projects alignment — center and side by side */
+/* Fix projects alignment — centered and side by side */
 .projects-scroll {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     align-items: stretch;
-    gap: 26px;
-    flex-wrap: wrap;
+    gap: 30px;
+    flex-wrap: wrap; 
     margin-top: 20px;
-}
-
-.project-card {
-    width: 350px;
+    padding-bottom: 20px;
 }
 
 /* ---------------------------- */
