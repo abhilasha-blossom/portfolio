@@ -227,6 +227,49 @@ nav ul li a:hover {
     }
 }
 
+/* Hero Highlights */
+.hero-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.highlight-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 24px 20px;
+    border-radius: 20px;
+    width: 260px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+}
+
+.h-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.highlight-card h3 {
+    font-size: 1.15rem;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+}
+
+.highlight-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
